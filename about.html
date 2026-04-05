@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Launcher | About</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+  <nav>
+    <div class="nav-container">
+      <div class="logo">🚀 The Launcher</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="services.html">Skills & Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>About <span class="gradient">The Launcher</span></h1>
+        <p>One person, one vision, endless dedication.</p>
+      </div>
+    </section>
+
+    <section class="about-founder">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text glass-card">
+            <h2><i class="fas fa-user-astronaut"></i> Founder & sole developer</h2>
+            <p>Hi, I'm the creator behind The Launcher. I believe that a single focused expert can deliver results that rival entire agencies. With years of hands‑on experience, I craft websites that are not only beautiful but also fast, accessible, and conversion‑oriented.</p>
+            <p>My approach is simple: understand your dream, then build the most effective digital version of it — no bloat, no unnecessary features, just pure value.</p>
+            <div class="stats">
+              <div><span>3+</span> years experience</div>
+              <div><span>100%</span> client satisfaction</div>
+              <div><span>1</span> project at a time</div>
+            </div>
+          </div>
+          <div class="about-icon">
+            <i class="fas fa-rocket"></i>
+            <h3>"We convert your dreams into reality"</h3>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="philosophy">
+      <div class="container">
+        <div class="philosophy-card glass-card">
+          <h2>Why work with a solo expert?</h2>
+          <div class="philosophy-grid">
+            <div><i class="fas fa-microphone-alt"></i> Direct communication — no middlemen</div>
+            <div><i class="fas fa-gem"></i> Obsessive attention to every pixel</div>
+            <div><i class="fas fa-hourglass-half"></i> Faster turnaround, full accountability</div>
+            <div><i class="fas fa-hand-sparkles"></i> Custom solutions, not templates</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 The Launcher — Solo founder, limitless passion. All dreams launched.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    gsap.from(".page-header h1", { duration: 1, y: 50, opacity: 0 });
+    gsap.from(".page-header p", { duration: 0.8, y: 30, opacity: 0, delay: 0.2 });
+    gsap.from(".about-text", { scrollTrigger: ".about-founder", duration: 0.9, x: -40, opacity: 0 });
+    gsap.from(".about-icon", { scrollTrigger: ".about-founder", duration: 0.9, x: 40, opacity: 0, delay: 0.2 });
+    gsap.from(".philosophy-card", { scrollTrigger: ".philosophy", duration: 0.8, y: 50, opacity: 0 });
+  </script>
+</body>
+</html>

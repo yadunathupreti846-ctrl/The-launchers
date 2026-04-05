@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Launcher | Contact</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+</head>
+<body>
+  <canvas id="bg-canvas"></canvas>
+  <nav>
+    <div class="nav-container">
+      <div class="logo">🚀 The Launcher</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Skills & Services</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h1>Let's <span class="gradient">launch</span> your idea</h1>
+        <p>Tell me about your project — I'll reply within 24 hours.</p>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info glass-card">
+            <h3><i class="fab fa-whatsapp"></i> WhatsApp direct</h3>
+            <p>Prefer a quick chat? Click the button below to message me on WhatsApp.</p>
+            <a href="https://wa.me/9848999394?text=Hello%20The%20Launcher%2C%20I'm%20interested%20in%20building%20a%20website!" target="_blank" class="btn-primary whatsapp-btn"><i class="fab fa-whatsapp"></i> Chat on WhatsApp</a>
+            <p class="small-note">Or fill the form — it will open WhatsApp with your message.</p>
+          </div>
+          <div class="contact-form glass-card">
+            <h3>Send a message</h3>
+            <form id="contactForm">
+              <input type="text" id="name" placeholder="Your name" required>
+              <input type="email" id="email" placeholder="Email address" required>
+              <textarea id="message" rows="5" placeholder="Tell me about your dream project..." required></textarea>
+              <button type="submit" class="btn-primary full-width"><i class="fab fa-whatsapp"></i> Send via WhatsApp</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 The Launcher — Solo founder, limitless passion. All dreams launched.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    gsap.from(".page-header h1", { duration: 1, y: 50, opacity: 0 });
+    gsap.from(".contact-info", { duration: 0.9, x: -40, opacity: 0 });
+    gsap.from(".contact-form", { duration: 0.9, x: 40, opacity: 0, delay: 0.2 });
+
+    // WhatsApp form submission
+    const form = document.getElementById('contactForm');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if (!name || !email || !message) {
+        alert('Please fill all fields');
+        return;
+      }
+      const whatsappMessage = `Name: ${name}%0AEmail: ${email}%0AMessage: ${message}`;
+      const url = `https://wa.me/9848999394?text=${whatsappMessage}`;
+      window.open(url, '_blank');
+    });
+  </script>
+</body>
+</html>
