@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Prashant Upreti</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root { --accent-green: #8bc34a; --text-primary: #e8f0e0; --card-bg: rgba(20, 30, 15, 0.85); }
+    body.dark { --card-bg: rgba(10, 18, 8, 0.9); }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: url('https://images.pexels.com/photos/1266810/pexels-photo-1266810.jpeg?auto=compress&cs=tinysrgb&w=1600') no-repeat center center fixed;
+      background-size: cover;
+      color: var(--text-primary);
+    }
+    body::before { content: ""; position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6); z-index: -1; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    header, footer { background: rgba(0,0,0,0.5); backdrop-filter: blur(8px); }
+    header { padding: 24px 0; position: sticky; top:0; z-index: 100; }
+    .nav-bar { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+    .logo { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; color: #f5f5dc; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { text-decoration: none; font-weight: 500; color: #f0f0e0; transition: 0.3s; }
+    .nav-links a:hover { color: #c8e6b5; text-shadow: 0 0 6px #8bc34a; }
+    .dark-toggle { background: #2c3e2f; border: none; border-radius: 60px; width: 44px; height: 44px; cursor: pointer; color: #f9c74f; }
+    .projects-section { padding: 80px 0; }
+    .section-title { font-size: 2.8rem; font-family: 'Playfair Display', serif; margin-bottom: 48px; border-left: 6px solid #8bc34a; padding-left: 20px; }
+    .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; }
+    .project-card { background: var(--card-bg); backdrop-filter: blur(12px); border-radius: 28px; overflow: hidden; transition: 0.4s; }
+    .project-card:hover { transform: translateY(-12px); box-shadow: 0 25px 35px -12px black; }
+    .project-img { height: 200px; background: linear-gradient(135deg, #4a7c3f, #8bc34a); display: flex; align-items: center; justify-content: center; font-size: 3rem; color: rgb(207, 205, 205); }
+    .project-info { padding: 24px; }
+    .project-info h3 { font-size: 1.6rem; margin-bottom: 12px; }
+    .project-link { display: inline-block; margin-top: 16px; color: #85f352; font-weight: 600; text-decoration: none; }
+    .project-link i { transition: 0.2s; }
+    .project-link:hover i { transform: translateX(6px); }
+    .whatsapp-float { position: fixed; bottom: 28px; right: 28px; background: #25D366; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; color: white; text-decoration: none; box-shadow: 0 6px 18px rgba(0,0,0,0.3); transition: 0.3s; z-index: 99; }
+    footer { text-align: center; padding: 32px; margin-top: 60px; background: rgba(0,0,0,0.5); color: #ddd; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav-bar">
+      <div class="logo">Prashant </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="education.html">Education</a></li><li><a href="projects.html">Projects</a></li><li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button class="dark-toggle" id="darkToggle"><i class="fas fa-moon"></i></button>
+    </div>
+  </header>
+  <main class="projects-section">
+    <div class="container">
+      <h2 class="section-title">My Work & Upcoming</h2>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-img"><img src="https://ashirwadagro.com.np/About1.jpeg" alt=""></div>
+          <div class="project-info">
+            <h3>Ashirwad Agro</h3>
+            <p>Live agribusiness platform for organic products. Fully responsive & live.</p>
+            <a href="https://ashirwadagro.com.np/" target="_blank" class="project-link">Visit Live <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+        <div class="project-card">
+          <div class="project-img"><i class="fas fa-school"></i> 🏫</div>
+          <div class="project-info">
+            <h3>School Website (Upcoming)</h3>
+            <p>Complete digital presence for my school – with events, resources, and parent portal. Launching soon.</p>
+            <span class="project-link" style="cursor:default;">✨ In development · Coming 2026</span>
+          </div>
+        </div>
+        
+    </div>
+  </main>
+  <footer>© 2026 Prashant Upreti — Just Exploring & Learning With Time</footer>
+  <a href="https://wa.me/9779848999394" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+  <script>
+    const toggle = document.getElementById('darkToggle');
+    const body = document.body;
+    toggle.addEventListener('click', () => { body.classList.toggle('dark'); localStorage.setItem('theme', body.classList.contains('dark') ? 'dark' : 'light'); });
+    if (localStorage.getItem('theme') === 'dark') body.classList.add('dark');
+  </script>
+</body>
+</html>
